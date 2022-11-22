@@ -39,7 +39,7 @@ jobs:
         # to keep developers focused in their day to day on their code changes and not overwhelm them with
         # findings they may not be responsible for.
         env:
-          DETECT_BLACKDUCK_RAPID_COMPARE_MODE: BOM_COMPARE_STRICT
+        #  DETECT_BLACKDUCK_RAPID_COMPARE_MODE: BOM_COMPARE_STRICT
           NODE_TLS_REJECT_UNAUTHORIZED: 0
         # You can use this option to configure a CA cert if using a self-hosted runner and self-signed
         # certificates on your Hub server. This option should point to a file on the local filesystem
