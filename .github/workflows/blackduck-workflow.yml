@@ -59,9 +59,8 @@ jobs:
         # You can use this option to configure a CA cert if using a self-hosted runner and self-signed
         # certificates on your Hub server. This option should point to a file on the local filesystem
         # with the CA chain cert
-        env:
+        #env:
         #  NODE_EXTRA_CA_CERTS: ${{ secrets.LOCAL_CA_CERT_PATH }}
-	  NODE_TLS_REJECT_UNAUTHORIZED: 0
         with:
           scan-mode: INTELLIGENT
           github-token: ${{ secrets.GITHUB_TOKEN }}
