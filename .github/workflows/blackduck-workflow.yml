@@ -61,7 +61,7 @@ jobs:
         # with the CA chain cert
         env:
           DETECT_DIAGNOSTIC: true
-          DETECT_CLEANUP: false
+        #  DETECT_CLEANUP: false
         #  NODE_EXTRA_CA_CERTS: ${{ secrets.LOCAL_CA_CERT_PATH }}
         with:
           scan-mode: INTELLIGENT
