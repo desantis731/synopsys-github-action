@@ -67,4 +67,4 @@ jobs:
           detect-version: 8.3.0
           blackduck-url: ${{ secrets.BLACKDUCK_URL }}
           blackduck-api-token: ${{ secrets.BLACKDUCK_API_TOKEN }}
-          detect.diagnostic: true
+          detect-diagnostic: true
