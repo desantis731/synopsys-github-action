@@ -41,6 +41,7 @@ jobs:
         env:
         #  DETECT_BLACKDUCK_RAPID_COMPARE_MODE: BOM_COMPARE_STRICT
           NODE_TLS_REJECT_UNAUTHORIZED: 0
+          DETECT_DIAGNOSTIC: TRUE
         # You can use this option to configure a CA cert if using a self-hosted runner and self-signed
         # certificates on your Hub server. This option should point to a file on the local filesystem
         # with the CA chain cert
@@ -67,4 +68,3 @@ jobs:
           detect-version: 8.3.0
           blackduck-url: ${{ secrets.BLACKDUCK_URL }}
           blackduck-api-token: ${{ secrets.BLACKDUCK_API_TOKEN }}
-          detect-diagnostic: true
