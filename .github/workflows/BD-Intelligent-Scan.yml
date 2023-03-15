@@ -2,10 +2,10 @@ name: Security Application Scan
 
 # Run Rapid Scan on all pull requests and pushes to a main branch
 on:
-  pull_request:
-##    branches:
-#      - master
   push:
+    branches: [ master, main ]
+  pull_request:
+    branches: [ master, main ]
 
 
   #workflow_dispatch:
