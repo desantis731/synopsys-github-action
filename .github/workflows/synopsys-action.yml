@@ -16,13 +16,24 @@ jobs:
       - name: Synopsys Action
         uses: synopsys-sig/synopsys-action@v1.2.0
         env: 
+          DETECT_PROJECT_NAME: Synopsys_Action
+          DETECT_PROJECT_VERSION_NAME: master
+          #DETECT_TOOLS_EXCLUDED: SIGNATURE_SCAN
+          #DETECT_POLICY_CHECK_FAIL_ON_SEVERITIES: BLOCKER,CRITICAL,MAJOR,MINOR
+          #DETECT_PROJECT_USER_GROUPS: plat-portal-admins,plat-portal-users
+          DETECT_WAIT_FOR_RESULTS: TRUE
+          #DETECT_PROJECT_CODELOCATION_UNMAP: true
+          DETECT_TIMEOUT: 3600
           NODE_TLS_REJECT_UNAUTHORIZED: 0
           BLACKDUCK_TRUST_CERT: true
         with:
           blackduck_apiToken: ${{ secrets.BLACKDUCK_API_TOKEN }}
           blackduck_url: ${{ secrets.BLACKDUCK_URL }}
-#          include_diagnostics: true
-
+          blackduck_scan_full: true
+          github_token: ${{ secrets.GH_TOKEN }}
+          #include_diagnostics: true
+          blackduck_scan_failure_severities: "ALL"
+          
           #Optional- To enable feedback from Black Duck security testing as pull request comment
           #blackduck_automation_prcomment: true
           #Optional- To enable autoamtic fix pull request creation if vulnerabilities are reported
