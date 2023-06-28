@@ -1,0 +1,28 @@
+name: Synopsys Security Testing
+
+on:
+  push:
+    branches: [ master, main ]
+
+  pull_request:
+    branches: [ master, main ]
+
+jobs:
+  build:
+    runs-on: [self-hosted, macOS, x64]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Synopsys Action
+        uses: synopsys-sig/synopsys-action@v1.2.0
+        with:
+          blackduck_apiToken: ${{ secrets.BLACKDUCK_API_TOKEN }}
+          blackduck_url: ${{ secrets.BLACKDUCK_URL }}  
+          include_diagnostics: true
+
+          #Optional- To enable feedback from Black Duck security testing as pull request comment
+          #blackduck_automation_prcomment: true
+          #Optional- To enable autoamtic fix pull request creation if vulnerabilities are reported
+          #blackduck_automation_fixpr: true
+          #Mandatory if blackduck_automation_fixpr or blackduck_automation_prcomment is set true
+          #github_token: ${{ secrets.GITHUB_TOKEN }}
