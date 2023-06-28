@@ -20,8 +20,7 @@ jobs:
         with:
           blackduck_apiToken: ${{ secrets.BLACKDUCK_API_TOKEN }}
           blackduck_url: ${{ secrets.BLACKDUCK_URL }} 
-          include_diagnostics: true
-          blackduck_trust_cert: true
+#          include_diagnostics: true
 
           #Optional- To enable feedback from Black Duck security testing as pull request comment
           #blackduck_automation_prcomment: true
