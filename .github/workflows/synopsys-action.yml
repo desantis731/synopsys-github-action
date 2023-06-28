@@ -19,7 +19,8 @@ jobs:
           NODE_TLS_REJECT_UNAUTHORIZED: 0
         with:
           blackduck_apiToken: ${{ secrets.BLACKDUCK_API_TOKEN }}
-          blackduck_url: ${{ secrets.BLACKDUCK_URL }} 
+          blackduck_url: ${{ secrets.BLACKDUCK_URL }}
+          detect-trust-cert: true
 #          include_diagnostics: true
 
           #Optional- To enable feedback from Black Duck security testing as pull request comment
