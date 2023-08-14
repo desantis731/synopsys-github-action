@@ -56,7 +56,7 @@ jobs:
           DETECT_EXCLUDED_DETECTOR_TYPES: 'GIT'
           NODE_TLS_REJECT_UNAUTHORIZED: 0
           BLACKDUCK_TRUST_CERT: true
-          #DETECT_BLACKDUCK_RAPID_COMPARE_MODE: BOM_COMPARE_STRICT
+          DETECT_BLACKDUCK_RAPID_COMPARE_MODE: ALL
         with:
           blackduck_url: ${{ secrets.BLACKDUCK_URL }}
           blackduck_apiToken: ${{ secrets.BLACKDUCK_API_TOKEN }}
