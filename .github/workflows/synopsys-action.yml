@@ -29,7 +29,7 @@ jobs:
           DETECT_TIMEOUT: 3600
           NODE_TLS_REJECT_UNAUTHORIZED: 0
           BLACKDUCK_TRUST_CERT: true
-          #DETECT_BLACKDUCK_RAPID_COMPARE_MODE: BOM_COMPARE_STRICT
+          LOGGING_LEVEL_DETECT: 'DEBUG'
         with:
           blackduck_apiToken: ${{ secrets.BLACKDUCK_API_TOKEN }}
           blackduck_url: ${{ secrets.BLACKDUCK_URL }}
@@ -56,6 +56,7 @@ jobs:
           DETECT_EXCLUDED_DETECTOR_TYPES: 'GIT'
           NODE_TLS_REJECT_UNAUTHORIZED: 0
           BLACKDUCK_TRUST_CERT: true
+          LOGGING_LEVEL_DETECT: 'DEBUG'
           #DETECT_BLACKDUCK_RAPID_COMPARE_MODE: BOM_COMPARE_STRICT
         with:
           blackduck_url: ${{ secrets.BLACKDUCK_URL }}
