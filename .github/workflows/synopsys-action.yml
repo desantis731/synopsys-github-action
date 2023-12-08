@@ -15,7 +15,8 @@ jobs:
         uses: actions/checkout@v3
         
       - name: Black Duck Full Scan
-        uses: synopsys-sig/synopsys-action@v1.2.0
+        if: ${{ github.event_name == 'push' }}
+        uses: synopsys-sig/synopsys-action@v1.6.0
         env: 
           DETECT_PROJECT_NAME: ${{ github.event.repository.name }}
           DETECT_PROJECT_VERSION_NAME: ${{ github.ref_name }}
@@ -30,6 +31,8 @@ jobs:
           NODE_TLS_REJECT_UNAUTHORIZED: 0
           BLACKDUCK_TRUST_CERT: true
           LOGGING_LEVEL_DETECT: 'DEBUG'
+          #DETECT_BLACKDUCK_RAPID_COMPARE_MODE: BOM_COMPARE_STRICT
+          #DETECT_EXCLUDED_DIRECTORIES:
         with:
           blackduck_apiToken: ${{ secrets.BLACKDUCK_API_TOKEN }}
           blackduck_url: ${{ secrets.BLACKDUCK_URL }}
@@ -47,7 +50,7 @@ jobs:
 
       - name: Black Duck PR Scan
         if: ${{ github.event_name == 'pull_request' }}
-        uses: synopsys-sig/synopsys-action@v1.2.0
+        uses: synopsys-sig/synopsys-action@v1.6.0
         ### Use below configurations to set specific detect environment varibales
         env:
           DETECT_PROJECT_NAME: ${{ github.event.repository.name }}
@@ -58,6 +61,7 @@ jobs:
           BLACKDUCK_TRUST_CERT: true
           LOGGING_LEVEL_DETECT: 'DEBUG'
           #DETECT_BLACKDUCK_RAPID_COMPARE_MODE: BOM_COMPARE_STRICT
+          DETECT_BLACKDUCK_RAPID_COMPARE_MODE: ALL
         with:
           blackduck_url: ${{ secrets.BLACKDUCK_URL }}
           blackduck_apiToken: ${{ secrets.BLACKDUCK_API_TOKEN }}
