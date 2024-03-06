@@ -23,7 +23,7 @@ jobs:
           DETECT_CODE_LOCATION_NAME: ${{ github.event.repository.name }}-${{ github.ref_name }}
           DETECT_EXCLUDED_DETECTOR_TYPES: 'GIT'
           #DETECT_TOOLS_EXCLUDED: SIGNATURE_SCAN
-          #DETECT_POLICY_CHECK_FAIL_ON_SEVERITIES: BLOCKER,CRITICAL,MAJOR,MINOR
+          DETECT_POLICY_CHECK_FAIL_ON_SEVERITIES: BLOCKER,CRITICAL,MAJOR,MINOR
           #DETECT_PROJECT_USER_GROUPS: plat-portal-admins,plat-portal-users
           #DETECT_WAIT_FOR_RESULTS: TRUE
           #DETECT_PROJECT_CODELOCATION_UNMAP: true
@@ -42,7 +42,7 @@ jobs:
           blackduck_scan_failure_severities: "ALL"
           
           #Optional- To enable feedback from Black Duck security testing as pull request comment
-          #blackduck_automation_prcomment: true
+          blackduck_automation_prcomment: true
           #Optional- To enable autoamtic fix pull request creation if vulnerabilities are reported
           #blackduck_automation_fixpr: true
           #Mandatory if blackduck_automation_fixpr or blackduck_automation_prcomment is set true
@@ -70,4 +70,4 @@ jobs:
           blackduck_automation_prcomment: true
           github_token: ${{ secrets.GITHUB_TOKEN }} # Mandatory when blackduck_automation_prcomment is set to 'true'
           ### Uncomment below configuration if Synopsys Bridge diagnostic files needs to be uploaded
-          # include_diagnostics: true
+          include_diagnostics: true
