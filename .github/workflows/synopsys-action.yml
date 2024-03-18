@@ -32,7 +32,7 @@ jobs:
           BLACKDUCK_TRUST_CERT: true
           #DETECT_BLACKDUCK_RAPID_COMPARE_MODE: BOM_COMPARE_STRICT
           #DETECT_EXCLUDED_DIRECTORIES:
-          DETECT_FORCE_SUCCESS: true
+          #DETECT_FORCE_SUCCESS: true
         with:
           blackduck_apiToken: ${{ secrets.BLACKDUCK_API_TOKEN }}
           blackduck_url: ${{ secrets.BLACKDUCK_URL }}
