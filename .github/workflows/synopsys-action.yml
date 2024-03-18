@@ -46,4 +46,4 @@ jobs:
           #Optional- To enable autoamtic fix pull request creation if vulnerabilities are reported
           #blackduck_automation_fixpr: true
           #Mandatory if blackduck_automation_fixpr or blackduck_automation_prcomment is set true
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          #github_token: ${{ secrets.GITHUB_TOKEN }}
