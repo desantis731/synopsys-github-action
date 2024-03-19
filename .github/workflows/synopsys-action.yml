@@ -26,7 +26,7 @@ jobs:
         with:
           blackduck_url: ${{ secrets.BLACKDUCK_URL }}
           blackduck_apiToken: ${{ secrets.BLACKDUCK_API_TOKEN }}
-          blackduck_scan_full: false
+          blackduck_scan_full: True
           ### Accepts Multiple Values
           blackduck_scan_failure_severities: 'ALL'
           ### Below configuration is used to enable automatic pull request comment based on Black Duck scan result
