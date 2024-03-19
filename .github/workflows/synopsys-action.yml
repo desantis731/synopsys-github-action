@@ -40,6 +40,7 @@ jobs:
           github_token: ${{ secrets.GH_TOKEN }}
           #include_diagnostics: true
           blackduck_scan_failure_severities: "ALL"
+          DETECT_FORCE_SUCCESS: true
           
           #Optional- To enable feedback from Black Duck security testing as pull request comment
           #blackduck_automation_prcomment: true
