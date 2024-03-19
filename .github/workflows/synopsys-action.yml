@@ -13,7 +13,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-        
       - name: Black Duck PR Scan
         if: ${{ github.event_name == 'pull_request' }}
         uses: synopsys-sig/synopsys-action@v1.8.0
@@ -22,8 +21,6 @@ jobs:
           DETECT_PROJECT_NAME: ${{ github.event.repository.name }}
           DETECT_PROJECT_VERSION_NAME: main
           DETECT_CODE_LOCATION_NAME: ${{ github.event.repository.name }}-${{ github.ref_name }}
-          DETECT_EXCLUDED_DETECTOR_TYPES: 'GIT'
-          NODE_TLS_REJECT_UNAUTHORIZED: 0
           BLACKDUCK_TRUST_CERT: true
           DETECT_BLACKDUCK_RAPID_COMPARE_MODE: ALL
         with:
