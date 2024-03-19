@@ -39,7 +39,7 @@ jobs:
           blackduck_scan_full: true
           github_token: ${{ secrets.GH_TOKEN }}
           #include_diagnostics: true
-          blackduck_scan_failure_severities: "ALL"
+          #blackduck_scan_failure_severities: "ALL"
           DETECT_FORCE_SUCCESS: true
           bridge.break: true
           
@@ -69,7 +69,7 @@ jobs:
           blackduck_apiToken: ${{ secrets.BLACKDUCK_API_TOKEN }}
           blackduck_scan_full: false
           ### Accepts Multiple Values
-          blackduck_scan_failure_severities: 'BLOCKER,CRITICAL'
+          blackduck_scan_failure_severities: 'ALL'
           ### Below configuration is used to enable automatic pull request comment based on Black Duck scan result
           blackduck_automation_fixpr: true
           blackduck_automation_prcomment: true
