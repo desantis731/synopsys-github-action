@@ -40,13 +40,6 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           #include_diagnostics: true
           blackduck_scan_failure_severities: "ALL"
-          
-          #Optional- To enable feedback from Black Duck security testing as pull request comment
-          #blackduck_automation_prcomment: true
-          #Optional- To enable autoamtic fix pull request creation if vulnerabilities are reported
-          #blackduck_automation_fixpr: true
-          #Mandatory if blackduck_automation_fixpr or blackduck_automation_prcomment is set true
-          #github_token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Black Duck PR Scan
         if: ${{ github.event_name == 'pull_request' }}
