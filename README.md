@@ -26,4 +26,3 @@ and the dependency:
 	</dependency>
 ```
 
-123456789
