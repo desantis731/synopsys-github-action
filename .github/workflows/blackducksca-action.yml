@@ -36,10 +36,11 @@ jobs:
         with:
           blackducksca_token: ${{ secrets.BLACKDUCK_API_TOKEN }}
           blackducksca_url: ${{ secrets.BLACKDUCK_URL }}
-          blackduck_scan_full: true
+          blackducksca_scan_full: true
           github_token: ${{ secrets.GH_TOKEN }}
+          #blackducksca_waitForScan: false
           #include_diagnostics: true
-          blackduck_scan_failure_severities: "ALL"
+          blackducksca_scan_failure_severities: "ALL"
           
           #Optional- To enable feedback from Black Duck security testing as pull request comment
           #blackduck_automation_prcomment: true
@@ -54,7 +55,7 @@ jobs:
         ### Use below configurations to set specific detect environment varibales
         env:
           DETECT_PROJECT_NAME: ${{ github.event.repository.name }}
-          DETECT_PROJECT_VERSION_NAME: main
+          #DETECT_PROJECT_VERSION_NAME: main
           DETECT_CODE_LOCATION_NAME: ${{ github.event.repository.name }}-${{ github.ref_name }}
           DETECT_EXCLUDED_DETECTOR_TYPES: 'GIT'
           NODE_TLS_REJECT_UNAUTHORIZED: 0
@@ -64,11 +65,11 @@ jobs:
         with:
           blackducksca_url: ${{ secrets.BLACKDUCK_URL }}
           blackducksca_token: ${{ secrets.BLACKDUCK_API_TOKEN }}
-          blackduck_scan_full: false
+          blackducksca_scan_full: false
           ### Accepts Multiple Values
-          blackduck_scan_failure_severities: 'BLOCKER,CRITICAL'
+          blackducksca_scan_failure_severities: 'BLOCKER,CRITICAL'
           ### Below configuration is used to enable automatic pull request comment based on Black Duck scan result
-          blackducksca_prcomment_enabled: true
+          blackducksca_prComment_enabled: true
           github_token: ${{ secrets.GITHUB_TOKEN }} # Mandatory when blackduck_automation_prcomment is set to 'true'
           ### Uncomment below configuration if Synopsys Bridge diagnostic files needs to be uploaded
           # include_diagnostics: true
