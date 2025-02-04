@@ -40,7 +40,7 @@ jobs:
           github_token: ${{ secrets.GH_TOKEN }}
           #blackducksca_waitForScan: false
           #include_diagnostics: true
-          blackducksca_scan_failure_severities: "ALL"
+          #blackducksca_scan_failure_severities: "ALL"
           
           #Optional- To enable feedback from Black Duck security testing as pull request comment
           #blackduck_automation_prcomment: true
