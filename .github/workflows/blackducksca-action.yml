@@ -27,10 +27,11 @@ jobs:
           #DETECT_PROJECT_USER_GROUPS: plat-portal-admins,plat-portal-users
           #DETECT_WAIT_FOR_RESULTS: TRUE
           #DETECT_PROJECT_CODELOCATION_UNMAP: true
+          DETECT_ACCURACY_REQUIRED: NONE
           DETECT_TIMEOUT: 3600
           NODE_TLS_REJECT_UNAUTHORIZED: 0
           BLACKDUCK_TRUST_CERT: true
-          #DETECT_BLACKDUCK_RAPID_COMPARE_MODE: BOM_COMPARE_STRICT
+          DETECT_BLACKDUCK_RAPID_COMPARE_MODE: BOM_COMPARE_STRICT
           #DETECT_EXCLUDED_DIRECTORIES:
         with:
           blackducksca_token: ${{ secrets.BLACKDUCK_API_TOKEN }}
@@ -58,7 +59,8 @@ jobs:
           DETECT_EXCLUDED_DETECTOR_TYPES: 'GIT'
           NODE_TLS_REJECT_UNAUTHORIZED: 0
           BLACKDUCK_TRUST_CERT: true
-          DETECT_BLACKDUCK_RAPID_COMPARE_MODE: ALL
+          DETECT_BLACKDUCK_RAPID_COMPARE_MODE: BOM_COMPARE_STRICT
+          DETECT_ACCURACY_REQUIRED: NONE
         with:
           blackducksca_url: ${{ secrets.BLACKDUCK_URL }}
           blackducksca_token: ${{ secrets.BLACKDUCK_API_TOKEN }}
